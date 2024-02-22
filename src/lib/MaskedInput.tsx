@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useMemo } from 'react';
-import { InputRef } from 'antd';
 import { Input, InputProps, InputRef } from 'antd';
 import IMask from 'imask';
 
