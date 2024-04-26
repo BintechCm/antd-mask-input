@@ -27,8 +27,4 @@ describe('MaskedInput', () => {
     expect(sut.value).toBe('12/3_');
     expect(sut.placeholder).toBe('__/__');
   });
-
-  
-  });
-
 });
