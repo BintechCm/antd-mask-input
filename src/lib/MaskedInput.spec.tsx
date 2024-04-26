@@ -4,6 +4,7 @@
  */
 import { cleanup, render   } from '@testing-library/react';
 import MaskedInput from './MaskedInput';
+import React from 'react';
 
 describe('MaskedInput', () => {
   afterEach(async () => {
