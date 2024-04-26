@@ -2,7 +2,7 @@
 /**
  * @jest-environment jsdom
  */
-import { cleanup   } from '@testing-library/react';
+import { cleanup, render   } from '@testing-library/react';
 import MaskedInput from './MaskedInput';
 
 describe('MaskedInput', () => {
