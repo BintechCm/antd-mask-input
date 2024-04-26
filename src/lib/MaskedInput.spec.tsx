@@ -2,10 +2,7 @@
 /**
  * @jest-environment jsdom
  */
-import { act, cleanup, fireEvent, render } from '@testing-library/react';
-import { Form, FormInstance } from 'antd';
-import React from 'react';
-
+import { cleanup   } from '@testing-library/react';
 import MaskedInput from './MaskedInput';
 
 describe('MaskedInput', () => {
