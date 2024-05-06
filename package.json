@@ -28,7 +28,7 @@
     "build:main": "tsc -p tsconfig.prod.json --module commonjs --outDir build/main",
     "build:module": "tsc -p tsconfig.prod.json",
     "fix": "run-s fix:*",
-    "test": "jest --passWithNoTests",
+    "test": "jest",
     "test:unit": "nyc --silent jest",
     "watch": "run-s clean build:main && run-p \"build:main -- -w\" \"test:unit -- --watch --verbose\"",
     "cov": "run-s build test:unit cov:html && opn coverage/index.html",
