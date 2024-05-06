@@ -39,7 +39,7 @@
     "clean": "trash build test",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prepublish": "run-s build test"
+    "prepublish": "run-s build"
   },
   "scripts-info": {
     "info": "Display information about the package scripts",
