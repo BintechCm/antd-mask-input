@@ -55,30 +55,33 @@ export const MaskedInput = React.forwardRef<InputRef, MaskedInputProps>(
 
     const [value, setValue] = React.useState(propValue);
 
-    const _onEvent = React.useCallback((ev: any, execOnChangeCallback = false) => {
-      const masked = imask.current;
-      if (!masked) return;
+    const _onEvent = React.useCallback(
+      (ev: any, execOnChangeCallback = false) => {
+        const masked = imask.current;
+        if (!masked) return;
 
-      if (ev.target) {
-        if (ev.target.value !== masked.value) {
-          masked.value = ev.target.value;
-          ev.target.value = masked.value;
-          lastValue.current = masked.value;
+        if (ev.target) {
+          if (ev.target.value !== masked.value) {
+            masked.value = ev.target.value;
+            ev.target.value = masked.value;
+            lastValue.current = masked.value;
+          }
         }
-      }
 
-      Object.assign(ev, {
-        maskedValue: masked.value,
-        unmaskedValue: masked.unmaskedValue,
-      });
+        Object.assign(ev, {
+          maskedValue: masked.value,
+          unmaskedValue: masked.unmaskedValue,
+        });
 
-      masked.updateValue();
-      setValue(lastValue.current);
+        masked.updateValue();
+        setValue(lastValue.current);
 
-      if (execOnChangeCallback) {
-        props.onChange?.(ev);
-      }
-    }, []);
+        if (execOnChangeCallback) {
+          props.onChange?.(ev);
+        }
+      },
+      []
+    );
 
     const _onAccept = React.useCallback((ev: any) => {
       if (!ev?.target) return;
